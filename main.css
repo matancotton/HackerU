@@ -253,6 +253,11 @@ section#first {
 .contact-information {
     display: none;
 }
+
+.noSelect {
+    -webkit-tap-highlight-color: transparent;
+}
+
 @keyframes slide-down {
     from {
         height: 80.6px;
