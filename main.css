@@ -443,6 +443,10 @@ section#second h3 {
     
 }
 
+.fadeInUp {
+    transform: translateY(1rem);
+}
+
 .align-up {
     animation: alignUp 400ms ease-out forwards;
 }
