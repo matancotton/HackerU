@@ -1,3 +1,14 @@
+var isInViewport = function (elem) {
+	var distance = elem.getBoundingClientRect();
+	return (
+		distance.top >= 0 &&
+		distance.left >= 0 &&
+		distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+		distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+	);
+};
+
+
 const toggleButton = document.getElementById('toggle-button')
 const firstToggle = document.getElementById('first__toggle')
 const secondToggle = document.getElementById('second__toggle')
@@ -37,3 +48,18 @@ for (let i=0; i<mobileItems.length; i++){
         }
     })
 }
+
+const elements = document.getElementsByClassName('fadeInUp')
+for (let element of elements){
+    if (isInViewport(element))
+            element.classList.add('align-up')
+    window.addEventListener('scroll',()=>{
+        if (isInViewport(element))
+            element.classList.add('align-up')
+    })
+}
+
+
+
+
+
