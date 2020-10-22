@@ -444,7 +444,7 @@ section#second h3 {
 }
 
 .fadeInUp {
-    transform: translateY(1rem) !important;
+    transform: translateY(1rem);
 }
 
 .align-up {
