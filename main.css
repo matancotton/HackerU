@@ -1,0 +1,778 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,900');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+body {
+    margin: 0;
+    direction: rtl;
+    text-align: right;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+}
+
+.desktop-only {
+    display: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav__top {
+    display: none;
+    color: white;
+}
+
+.empty-line {
+    height: 0.5rem;
+    width: 100%;
+    background: #213a7f;
+    position: relative;
+    z-index: -1;
+}
+
+.header_main {
+    background: white;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-areas: "logo toggle"
+    "menu menu";
+    z-index: 1;
+    padding: 0.8rem 0.8rem 0 0.8rem;
+}
+
+.logo {
+    justify-self: start;
+    grid-area: logo;
+    
+}
+
+.logo img:focus {
+    outline: none;
+}
+.openedMainHeader {
+    grid-template-rows: 5rem auto;   
+    align-items: start;
+    animation: mobile-menu__slide-down 200ms forwards;
+}
+
+.main-nav__height {
+    height: auto !important;
+}
+
+.closeMainHeader {
+    align-items: start;
+    animation: mobile-menu__slide-up 200ms forwards;
+}
+
+.header_main .mobile-dropdown {
+    position: fixed;
+    visibility: hidden;
+    transform: translateY(-20%);
+    opacity: 0;
+    padding: 0;
+    padding-right: 0.5rem;
+    transition: opacity 200ms, position 200ms, transform 150ms linear;
+    text-align: right;
+    display: grid;
+    grid-gap: 1.5rem;
+    justify-content: start;
+    align-self: start;
+    grid-area: menu;
+    
+}
+
+.arrow {
+    content: url(https://www.hackeru.co.il/assets/site/images/menu_row.png);
+    vertical-align: middle;
+    display: inline-block;
+    padding-right: 5px;
+
+} 
+
+.header_main .mobile-dropdown li {
+    padding-bottom: 1.6rem;
+}
+
+.header_main .mobile-dropdown li a {
+    color: black;
+    font-size: 1.1rem;
+}
+
+.header_main .mobile-dropdown li a:active {
+    text-decoration: underline;
+}
+
+.header_main .mobile-dropdown li a span {
+    content: url('https://www.hackeru.co.il/assets/site/images/menu_row.png');
+    vertical-align: middle;
+}
+
+.header_main .mobile-dropdown .mobile-dropdown__sub-menu {
+    display:none;
+    padding: 0;
+    margin: 1rem;
+}
+
+.header_main .mobile-dropdown .mobile-dropdown__sub-menu li{
+    padding: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #aad6be;
+}
+
+.header_main .mobile-dropdown .mobile-dropdown__sub-menu li a {
+    font-size: 1.1rem;
+}
+
+main .banner {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1.5rem 1rem;
+    margin: 0;
+    background: linear-gradient(155deg,#8D25AA ,#1046A1);
+}
+
+main .banner span {
+    display: block;
+}
+
+#toggle-button {
+    width: 2.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: start;
+    vertical-align: center;
+    outline: none;
+    padding: 0;
+    padding-top: 1rem;
+    grid-area: toggle;
+    justify-self: left;
+    box-sizing: border-box;
+}
+
+.toggle-button__bar {
+    transform: rotateZ(0) translate(0);
+    width: 100%;
+    height: 5px;
+    background: #213A7F;
+    display: block;
+    margin: 0.3rem 0;
+    border-radius: 2px;
+    transition: transform 200ms, opacity 200ms ease-in-out;
+}
+
+.rotate45 {
+    transform: rotateZ(135deg) translateX(0.5rem);
+    transform-origin: bottom;
+}
+
+.rotate-45 {
+    transform: rotateZ(-135deg) translateX(0.5rem);
+    transform-origin: top;
+}
+
+.slide-middletoggle-bar {
+    transform: translate(3rem);
+    opacity: 0;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.open {
+    display: block !important;
+    opacity: 1 !important;
+    position: static !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+}
+main {
+    width: 100%;
+} 
+
+section#first {
+    background: #f5f8f9;
+}
+
+.courses {
+    display:grid;
+    width: 100%;
+    grid-template-rows: repeat(14, 1fr);
+    align-items: center;
+    align-content: center;
+    grid-gap: 0.2rem;
+}
+
+
+#first h3 {
+    font-size: 1.5rem;
+    justify-self: center;
+}
+
+.courses a {
+    color: #333;
+    border: 1px solid rgba(204,204,204,0.5);
+    padding: 1rem 0;
+    position: relative;
+}
+
+.courses a::after {
+    content: url('https://www.hackeru.co.il/assets/site/images/arrow.svg');
+    min-width: 10px;
+    position: absolute;
+    left: 0.5rem;
+    bottom: 30%;
+}
+
+.courses a .fadeInUp {
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+}
+
+.courses .course-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    /* margin-left: 1rem; */
+    margin: 1rem;
+    
+}
+.courses a div .course-icon img{
+    /* width: 100%; */
+    height: 100%;
+    object-fit: cover;
+    
+    
+}
+
+.courses a div .course-seperator {
+    width: 0.3rem;
+    height: 3rem;
+    border-radius: 3px;
+}
+
+.courses .name {
+    padding: 1rem;
+    text-align: right;
+    flex-shrink: 1;
+}
+
+section#second {
+    margin-top: 3rem;
+    padding: 3rem;
+    padding-bottom: 5rem;
+    background: url(https://www.hackeru.co.il/assets/site/images/bg_4.png);
+}
+
+section#second h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 2rem;
+}
+
+#second .advantages .advantage {
+    padding-bottom: 2rem;
+}
+
+#second .advantages .advantage a {
+    display: inline-block;
+    padding-top: 1rem;
+    color: #213a7f;
+    text-decoration: underline;
+}
+
+#third {
+    padding: 3rem;
+    background: #fbfcfc;
+}
+
+#third .video {
+    background: white;
+    position: relative;
+    margin: 0 auto;
+    top:-8rem;
+    width: 19rem;
+    height: 13rem;
+    box-shadow: 3px 4px 3px rgba(139,145,147,0.4)
+}
+
+#third .video a {
+    display: block;
+    width: 18.8rem;
+    height: 10rem;
+    margin: auto;
+    padding: 1px;
+}
+
+#third .video a img {
+    width: 100%;
+    height: 100%;
+}
+
+#third .video span {
+    padding: 0.5rem 1.5rem;
+    display: block;
+    width: 100%;
+    height: 4rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#third h3 {
+    font-size: 1.7rem;
+    padding-bottom: 1.5rem;
+}
+
+#third p {
+    padding-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.title {
+    font-weight: bold;
+}
+
+#footer {
+    background: #213b7f;
+    padding: 1rem;
+}
+
+.main {
+    margin:  0 auto;
+    width: 80%;
+}
+
+#footer .main .title {
+    color: white;
+    font-size: 1.2rem;
+    padding: 2rem 0;
+    font-weight: 400;
+}
+
+.form {
+    margin: 0 auto;
+    width: 90%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.form .input,
+.contact-information .input {
+    background: white;
+    padding: 1.5rem 0.5rem 1.5rem 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+}
+
+.form .input label,
+.contact-information .input label {
+    width: 5rem;
+}
+
+.form .input input,
+.contact-information .input input {
+    justify-self: end;
+    outline: none;
+    border: none;
+}
+
+.form .button,
+.contact-information .button {
+    background: #18FFFF;
+    border: 4px solid #00B8D4;
+    font-weight: 900;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    width: 100%;
+    outline: none;
+}
+.form .checkbox,
+.contact-information .checkbox {
+    align-self: center;
+    text-align: center;
+    color: white;
+}
+
+.form .checkbox a,
+.contact-information .checkbox a {
+    color: white;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.form .social {
+    align-self: center;
+    padding: 1rem;
+}
+.branches-container {
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 70%;
+    height: 40rem;
+    background: url(https://www.hackeru.co.il/assets/site/images/footer-contact.jpg);;
+}
+.branches {
+    display: flex;
+    text-align: center;
+    padding: 1rem;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.5);
+
+}
+
+.branches .new {
+    background:  #213b7f;
+    color: white;
+    padding: 5px;
+
+}
+
+.icons {
+    height: 3rem;
+    background: #eee;
+    text-align: center;
+}
+
+.icons img {
+    height: 100%;
+    width: 60%;
+    
+}
+
+.whats-app {
+    position: fixed;
+    bottom: -1px;
+    background: rgb(46, 221, 61);
+    display: flex;
+    height: 4rem;
+    width: 100%;
+
+}
+
+.whats-app div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    border-left: 2px solid white;
+    padding: 0.5rem 1rem;
+    width: 33%;
+}
+
+.whats-app div:last-child {
+    border: none;
+}
+
+.whats-app span {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.fadeInUp {
+    transform: translateY(1rem);
+    opacity: 0;
+}
+
+.align-up {
+    animation: alignUp 400ms ease-out forwards;
+}
+
+@keyframes mobile-menu__slide-down {
+    from {
+        height: 5rem;
+    }
+    to {
+        height: 30rem;
+    }
+}
+
+@keyframes mobile-menu__slide-up {
+    from {
+        height: 30rem;
+    }
+    to {
+        height: 5rem;
+    }
+}
+
+@keyframes alignUp {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@media(min-width: 60rem) {
+    .desktop-only {
+        display: block;
+    }
+    .empty-line {
+        display: none;
+    }
+    .nav__top {
+        display: flex;
+        flex-wrap: nowrap;
+        background: #213a7f;
+        align-items: center;
+        height: 3rem;
+        justify-content: center;
+    }
+
+    .nav__top ul {
+        display: flex;
+    }
+
+    .nav__top ul li {
+        padding: 0  0.25rem;
+    }
+
+    .nav__top ul li a {
+        color: white;
+    }
+
+    .nav__top ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .nav__top .search {
+        margin: 0 3rem;
+        background: #122046;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav__top .search .input {
+        background: none;
+        color: white;
+        outline: none;
+        border: none;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+        width: 10rem;
+    }
+
+    .nav__top .search button {
+        background: none;
+        border: none;
+        outline: none;
+        padding: 0 0.5rem;
+        padding-top: 3px;
+        cursor: pointer;
+    }
+
+    .header_main #toggle-button {
+        display: none;
+    }
+
+
+    .header_main {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: sticky;
+        top: 0;
+        height: 6rem;
+    }
+
+    .header_main .units,
+    .header_main .logo {
+        padding: 0 0.8rem;
+        padding-bottom: 1rem;
+    }
+
+    .header_main .units a {
+        color: #000;
+    }
+
+    .header_main .units a:hover {
+        text-decoration: underline;
+    }
+
+    .open-desktop-dropdown {
+        display: flex  !important;
+    }
+
+    .header_main .units ul {
+        display: none;
+        list-style: none;
+        background: #213a7f;
+        z-index: 100;
+        flex-wrap: wrap;
+        flex-direction: column;
+        position: absolute;
+        top: 5.5rem;
+        max-height: 20rem;
+        border-radius: 5px;
+        padding: 0.8rem 1rem;
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    }
+
+    .header_main .units .large-container {
+        max-height: 18rem;
+        width: 35rem;
+    }
+
+    .header_main .units ul li {
+        padding: 0.5rem;
+        max-width: 10rem;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        height: 100%;
+    }
+
+    .header_main .units ul li:hover,
+    .header_main .units ul li:hover a {
+        background: #aad6be;
+        color: #213a7f;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .header_main .units ul li a {
+        color: #aad6be;
+        font-weight: bold;
+
+    }
+
+    .header_main .soilder-tag {
+        background: url(https://www.hackeru.co.il/assets/site/images/soldier.png) center/cover no-repeat;
+        position: absolute;
+        top: 0;
+        left: 8%;
+        width: 5rem;
+        height: 7rem;
+        z-index: 10;
+        text-align: center;
+        color: white;
+        padding: 1rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+        
+    }
+
+    .header_main .soilder-tag a {
+        color: white;
+        text-decoration: underline;
+        display: block;
+        margin-top: 10px;
+        font-size: 0.6rem;
+    }
+
+    .banner {
+        font-size: 2.5rem;
+        padding: 2.5rem 0;
+    }
+
+    .banner span {
+        font-size: 3rem;
+    }
+
+    #first {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #first .courses {
+        width: 60%;
+        grid-row-gap: 1rem;
+        padding-top: 2rem;
+        width: 60%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr repeat(4, 2fr);
+        align-items: center;
+    }
+
+    #first .courses .title {
+        grid-column: span 4;
+        text-align: right;
+        font-size: 2.5rem;
+    }
+
+    .courses a {
+        border: none;
+
+    }
+
+    .courses a .course-seperator {
+        display: none;
+    }
+
+    .courses a .fadeInUp {
+        height: 7rem;
+        display: block;
+    }
+
+    .courses a .fadeInUp:hover 
+    .course-icon img,
+    .courses a .fadeInUp:hover .name
+    {
+        opacity: 0.7;
+    }
+
+    .courses a .fadeInUp .course-icon {
+        margin: 0 auto;
+    }
+
+    .courses a .name {
+        text-align: center;
+    }
+
+    .courses a::after {
+        content: none;
+    }
+
+    .contact-information {
+    background: linear-gradient(135deg, #8e24aa 2%,#0d47a1 100%);
+    padding: 2rem;
+    width: 30%;
+    max-width: 20rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    }
+
+    .contact-information h3 {
+        color: white;
+        text-align: right;
+    }
+}
+
