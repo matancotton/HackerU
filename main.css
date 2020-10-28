@@ -1,0 +1,1356 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,900');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent !important;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    margin: 0;
+    direction: rtl;
+    text-align: right;
+    
+    font-size: 1rem;
+}
+
+.desktop-only {
+    display: none;
+}
+
+.tablet-only {
+    display: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.empty-line {
+    height: 0.5rem;
+    width: 100%;
+    background: #213a7f;
+    position: relative;
+    z-index: -1;
+}
+
+.header_main {
+    background: white;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-areas: "logo toggle"
+    "menu menu";
+    z-index: 1;
+    padding: 0.8rem 0.8rem 0 0.8rem;
+}
+
+.logo {
+    justify-self: start;
+    grid-area: logo;
+    
+}
+
+.logo img:focus {
+    outline: none;
+}
+.openedMainHeader {
+    grid-template-rows: 5rem auto;   
+    align-items: start;
+    animation: mobile-menu__slide-down 200ms forwards;
+}
+
+.main-nav__height {
+    height: auto !important;
+}
+
+.closeMainHeader {
+    align-items: start;
+    animation: mobile-menu__slide-up 200ms forwards;
+}
+
+.header_main .mobile-dropdown {
+    position: fixed;
+    visibility: hidden;
+    transform: translateY(-20%);
+    opacity: 0;
+    padding: 0;
+    padding-right: 0.5rem;
+    transition: opacity 200ms, position 200ms, transform 150ms linear;
+    text-align: right;
+    display: grid;
+    grid-gap: 1.5rem;
+    justify-content: start;
+    align-self: start;
+    grid-area: menu;
+    
+}
+
+.arrow {
+    content: url(https://www.hackeru.co.il/assets/site/images/menu_row.png);
+    vertical-align: middle;
+    display: inline-block;
+    padding-right: 5px;
+
+} 
+
+.header_main .mobile-dropdown li {
+    padding-bottom: 1.6rem;
+}
+
+.header_main .mobile-dropdown li a {
+    color: black;
+    font-size: 1.1rem;
+}
+
+.header_main .mobile-dropdown li a:active {
+    text-decoration: underline;
+}
+
+.header_main .mobile-dropdown li a span {
+    content: url('https://www.hackeru.co.il/assets/site/images/menu_row.png');
+    vertical-align: middle;
+}
+
+.header_main .mobile-dropdown .mobile-dropdown__sub-menu {
+    display:none;
+    padding: 0;
+    margin: 1rem;
+}
+
+.header_main .mobile-dropdown .mobile-dropdown__sub-menu li{
+    padding: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #aad6be;
+}
+
+.header_main .mobile-dropdown .mobile-dropdown__sub-menu li a {
+    font-size: 1.1rem;
+}
+
+main .banner {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1.5rem 1rem;
+    margin: 0;
+    background: linear-gradient(155deg,#8D25AA ,#1046A1);
+}
+
+main .banner span {
+    display: block;
+}
+
+#toggle-button {
+    width: 2.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: start;
+    vertical-align: center;
+    outline: none;
+    padding: 0;
+    padding-top: 1rem;
+    grid-area: toggle;
+    justify-self: left;
+    box-sizing: border-box;
+}
+
+.toggle-button__bar {
+    transform: rotateZ(0) translate(0);
+    width: 100%;
+    height: 5px;
+    background: #213A7F;
+    display: block;
+    margin: 0.3rem 0;
+    border-radius: 2px;
+    transition: transform 200ms, opacity 200ms ease-in-out;
+}
+
+.rotate45 {
+    transform: rotateZ(135deg) translateX(0.5rem);
+    transform-origin: bottom;
+}
+
+.rotate-45 {
+    transform: rotateZ(-135deg) translateX(0.5rem);
+    transform-origin: top;
+}
+
+.slide-middletoggle-bar {
+    transform: translate(3rem);
+    opacity: 0;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.open {
+    display: block !important;
+    opacity: 1 !important;
+    position: static !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+}
+main {
+    width: 100%;
+} 
+
+section#first {
+    background: #f5f8f9;
+}
+
+.courses {
+    display:grid;
+    width: 100%;
+    grid-template-rows: repeat(14, 1fr);
+    align-items: center;
+    align-content: center;
+    grid-gap: 0.2rem;
+}
+
+
+#first h3 {
+    font-size: 1.5rem;
+    justify-self: center;
+}
+
+.courses a {
+    color: #333;
+    border: 1px solid rgba(204,204,204,0.5);
+    padding: 1rem 0;
+    position: relative;
+}
+
+.courses a::after {
+    content: url('https://www.hackeru.co.il/assets/site/images/arrow.svg');
+    min-width: 10px;
+    position: absolute;
+    left: 0.5rem;
+    bottom: 30%;
+}
+
+.courses a .fadeInUp {
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+}
+
+.courses .course-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    /* margin-left: 1rem; */
+    margin: 1rem;
+    
+}
+.courses a div .course-icon img{
+    /* width: 100%; */
+    height: 100%;
+    object-fit: cover;
+    
+    
+}
+
+.courses a div .course-seperator {
+    width: 0.3rem;
+    height: 3rem;
+    border-radius: 3px;
+}
+
+.courses .name {
+    padding: 1rem;
+    text-align: right;
+    flex-shrink: 1;
+}
+
+section#second {
+    margin-top: 3rem;
+    padding: 3rem;
+    padding-bottom: 5rem;
+    background: url(https://www.hackeru.co.il/assets/site/images/bg_4.png);
+}
+
+section#second h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 2rem;
+}
+
+#second .advantages .advantage {
+    padding-bottom: 2rem;
+}
+
+#second .advantages .advantage a {
+    display: inline-block;
+    padding-top: 1rem;
+    color: #213a7f;
+    text-decoration: underline;
+}
+
+#third {
+    padding: 3rem;
+    background: #fbfcfc;
+}
+
+#third .video {
+    background: white;
+    position: relative;
+    margin: 0 auto;
+    top:-8rem;
+    width: 19rem;
+    height: 13rem;
+    box-shadow: 3px 4px 3px rgba(139,145,147,0.4)
+}
+
+#third .video a {
+    display: block;
+    width: 18.8rem;
+    height: 10rem;
+    margin: auto;
+    padding: 1px;
+}
+
+#third .video a img {
+    width: 100%;
+    height: 100%;
+}
+
+#third .video span {
+    padding: 0.5rem 1.5rem;
+    display: block;
+    width: 100%;
+    height: 4rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#third h3 {
+    font-size: 1.7rem;
+    padding-bottom: 1.5rem;
+}
+
+#third p {
+    padding-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.title {
+    font-weight: bold;
+}
+
+#footer {
+    background: #213b7f;
+    padding: 1rem;
+}
+
+.main {
+    margin:  0 auto;
+    width: 80%;
+}
+
+#footer .main>.title {
+    color: white;
+    font-size: 1.2rem;
+    padding: 2rem 0;
+    font-weight: 400;
+}
+
+.form {
+    margin: 0 auto;
+    width: 90%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.form .input,
+.contact-information .input {
+    background: white;
+    padding: 1.5rem 0.5rem 1.5rem 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+}
+
+.form .input label,
+.contact-information .input label {
+    width: 5rem;
+}
+
+.form .input input,
+.contact-information .input input {
+    justify-self: end;
+    outline: none;
+    border: none;
+}
+
+.form .button,
+.contact-information .button {
+    background: #18FFFF;
+    border: 4px solid #00B8D4;
+    font-weight: 900;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    width: 100%;
+    outline: none;
+    font: inherit;
+    font-weight: bold;
+    font-size: 2rem;
+}
+.form .checkbox,
+.contact-information .checkbox {
+    align-self: center;
+    text-align: center;
+    color: white;
+}
+
+.form .checkbox a,
+.contact-information .checkbox a {
+    color: white;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.social {
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+}
+.branches-container {
+    line-height: 2rem;
+    margin: 2rem auto;
+    padding: 0.5rem;
+    width: 80%;
+    background: url(https://www.hackeru.co.il/assets/site/images/footer-contact.jpg);;
+}
+.branches {
+    display: flex;
+    text-align: center;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.5);
+
+}
+
+.branches .info {
+    margin: 1rem 0;
+}
+
+.branches .new {
+    background:  #213b7f;
+    color: white;
+    padding: 5px;
+
+}
+
+.icons {
+    height: 3rem;
+    background: #eee;
+    text-align: center;
+}
+
+.icons img {
+    height: 100%;
+    width: 60%;
+    
+}
+
+.whats-app {
+    position: fixed;
+    bottom: -1px;
+    background: rgb(46, 221, 61);
+    display: flex;
+    height: 4rem;
+    width: 100%;
+
+}
+
+.whats-app div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    border-left: 2px solid white;
+    padding: 0.5rem 1rem;
+    width: 33%;
+}
+
+.whats-app div:last-child {
+    border: none;
+}
+
+.whats-app span {
+    color: white;
+    font-size: 1.3rem;
+}
+
+.fadeInUp {
+    transform: translateY(1rem);
+    opacity: 0;
+}
+
+.align-up {
+    animation: alignUp 400ms linear forwards;
+}
+
+@keyframes mobile-menu__slide-down {
+    from {
+        height: 5rem;
+    }
+    to {
+        height: 30rem;
+    }
+}
+
+@keyframes mobile-menu__slide-up {
+    from {
+        height: 30rem;
+    }
+    to {
+        height: 5rem;
+    }
+}
+
+@keyframes alignUp {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media(min-width: 30rem) {
+    .tablet-only {
+        display: block;
+    }
+
+    .nav__top {
+        display: flex;
+        flex-wrap: nowrap;
+        background: #213a7f;
+        align-items: center;
+        height: 3rem;
+        justify-content: center;
+    }
+    
+    .nav__top ul {
+        display: flex;
+    }
+    
+    .nav__top ul li {
+        padding: 0  0.25rem;
+    }
+    
+    .nav__top ul li a {
+        color: white;
+    }
+    
+    .nav__top ul li a:hover {
+        text-decoration: underline;
+    }
+
+    #first {
+        /* margin: 0 auto; */
+        /* width: 100%; */
+        padding-bottom: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #first .courses {
+        width: 100%;
+        max-width: 40rem;
+        grid-row-gap: 1rem;
+        padding-top: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr repeat(4, 2fr);
+        align-items: center;
+    }
+
+    #first .courses .title {
+        grid-column: span 4;
+        text-align: right;
+        font-size: 2.5rem;
+    }
+
+    .courses a {
+        border: none;
+
+    }
+
+    .courses a .course-seperator {
+        display: none;
+    }
+
+    .courses a .fadeInUp {
+        height: 7rem;
+        display: block;
+    }
+
+    .courses a .fadeInUp:hover 
+    .course-icon img,
+    .courses a .fadeInUp:hover .name
+    {
+        opacity: 0.7;
+    }
+
+    .courses a .fadeInUp .course-icon {
+        margin: 0 auto;
+    }
+
+    .courses a .name {
+        text-align: center;
+    }
+
+    .courses a::after {
+        content: none;
+    }
+
+    .whats-app {
+        display: none;
+    }
+
+}
+
+@media(min-width: 70rem) {
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        transition: opacity 0.2s linear;
+    }
+    .modal {
+        position: fixed;
+        animation: modal-slide 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        top: 10vh;
+        right: 30vw;
+        width: 35rem;
+        height: 35rem;
+        background: white;
+        z-index:200;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .close-modal {
+        opacity: 0;
+        transition: opacity 300ms ease-out;
+    }
+
+    .modal #pens {
+        position: absolute;
+        transform: translateX(-10%) translateY(-5%);
+        background: 0;
+        height: 10rem;
+        overflow: hidden;
+    }
+
+    .modal #marker {
+        position: absolute;
+        transform: translateX(-10%) translateY(250%) rotateZ(30deg);
+        background: 0;
+        width: 10rem;
+        height: 10rem;
+        overflow: hidden;
+
+    }
+
+    .modal #marker img {
+        transform: translateX(30%) translateY(-45%);
+    }
+
+    .modal #computer {
+        position: absolute;
+        transform: translateX(-80%) translateY(80%) rotateZ(-130deg);
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .modal #computer img {
+        transform: translateX(10%) translateY(15%) scale(-1, 1);
+    }
+
+    .modal .popup-form {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 90%;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-around;
+        color:rgb(120, 42, 169);
+    }
+
+    .modal .popup-form svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-bottom: 2rem;
+        cursor: pointer;
+    }
+
+    .modal .popup-form h3 {
+        font-size: 1.8rem;
+    }
+
+    .modal .popup-form h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .modal .popup-form h4 {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+
+    .modal .popup-form form {
+        display: flex;
+        flex-direction: column;
+        height: 45%;
+        justify-content: space-around;
+    }
+
+    .modal .popup-form form [type="text"] {
+        height: 2.5rem;
+        padding: 1rem;
+        box-shadow: rgb(33, 59, 127) 0px 0px 4px -1px;
+        border: none;
+        font-family: sans-serif;
+        font-size: 1rem;
+        color: rgb(21, 75, 156);
+        font-weight: bold;
+    }
+
+    .modal .popup-form form [type="text"]:focus {
+        outline: 1px dotted  rgb(21, 75, 156);;
+    }
+
+    .modal .popup-form form [type="text"]::placeholder {
+        opacity: 1;
+    }
+
+    .modal .popup-form form label .checkbox {
+        background: rgb(25, 141, 214);
+        border: none;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .modal .popup-form form button {
+        color: white;
+        font-size: 1.2rem;
+        width: 80%;
+        align-self: center;
+        height: 2.5rem;
+        background-color: rgb(24, 85, 136);
+        border: none;
+        border-radius: 2px;
+    }
+
+    .main {
+        max-width: 60rem;
+    }
+    .desktop-only {
+        display: block;
+    }
+    .empty-line {
+        display: none;
+    }
+    .nav__top .search {
+        margin: 0 3rem;
+        background: #122046;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .nav__top .search .input {
+        background: none;
+        color: white;
+        outline: none;
+        border: none;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+        width: 10rem;
+    }
+    
+    .nav__top .search button {
+        background: none;
+        border: none;
+        outline: none;
+        padding: 0 0.5rem;
+        padding-top: 3px;
+        cursor: pointer;
+    }
+
+    .header_main #toggle-button {
+        display: none;
+    }
+
+
+    .header_main {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: sticky;
+        top: 0;
+        height: 6rem;
+    }
+
+    .header_main .units,
+    .header_main .logo {
+        padding: 0 0.8rem;
+        padding-bottom: 1rem;
+    }
+
+    .header_main .units a {
+        color: #000;
+    }
+
+    .header_main .units a:hover {
+        text-decoration: underline;
+    }
+
+    .open-desktop-dropdown {
+        display: flex  !important;
+    }
+
+    .header_main .units ul {
+        display: none;
+        list-style: none;
+        background: #213a7f;
+        z-index: 100;
+        flex-wrap: wrap;
+        flex-direction: column;
+        position: absolute;
+        top: 5.5rem;
+        max-height: 20rem;
+        border-radius: 5px;
+        padding: 0.8rem 1rem;
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    }
+
+    .header_main .units .large-container {
+        max-height: 18rem;
+        width: 35rem;
+    }
+
+    .header_main .units ul li {
+        padding: 0.5rem;
+        max-width: 10rem;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        height: 100%;
+    }
+
+    .header_main .units ul li:hover,
+    .header_main .units ul li:hover a {
+        background: #aad6be;
+        color: #213a7f;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .header_main .units ul li a {
+        color: #aad6be;
+        font-weight: bold;
+
+    }
+
+    .header_main .soilder-tag {
+        background: url(https://www.hackeru.co.il/assets/site/images/soldier.png) center/cover no-repeat;
+        position: relative;
+        top: 1rem;
+        right: -1.2rem;
+        width: 5rem;
+        height: 7rem;
+        z-index: 10;
+        text-align: center;
+        color: white;
+        padding: 1rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+        
+    }
+
+    .header_main .soilder-tag a {
+        color: white;
+        text-decoration: underline;
+        display: block;
+        margin-top: 10px;
+        font-size: 0.6rem;
+    }
+
+    .banner {
+        font-size: 2.5rem;
+        padding: 2.5rem 0;
+    }
+
+    .banner span {
+        font-size: 3rem;
+    }
+
+    #first {
+        justify-content: center;
+    }
+
+    #first .courses {
+        width: 60%;
+        max-width: 40rem;
+        grid-row-gap: 1rem;
+        padding-top: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr repeat(4, 2fr);
+        align-items: center;
+    }
+
+    .contact-information {
+    margin-right: 1rem;
+    background: linear-gradient(135deg, #8e24aa 2%,#0d47a1 100%);
+    padding: 2rem 1.5rem;
+    width: 30%;
+    max-width: 19rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.175);
+    }
+
+    .contact-information .input {
+        height: 4rem;
+    }
+
+    .contact-information .input label {
+        min-width: 4rem;
+    }
+
+    .contact-information .input input {
+        overflow: hidden;
+    }
+
+    .contact-information h3 {
+        color: white;
+        text-align: right;
+    }
+
+    section#second {
+        margin: 0;
+        padding-top: 8rem;
+        position: relative;
+    }
+
+    #second .buisness {
+        display: flex;
+        position: absolute;
+        top: -6rem;
+        right: 25vw;
+        max-width: 50vw;
+        height: 10rem;
+        justify-content: space-between;
+        box-shadow: 3px 6px 10px rgba(0,0,0,.175);
+    }
+
+    #second .buisness h3 {
+        font-size: 1.2rem;
+        padding-bottom: 0.5rem;
+    } 
+
+    #second .buisness p,
+    #second .buisness .read-more {
+        font-size: 0.8rem;
+        color: #000;
+    }
+    
+    #second .buisness>div {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #second #world-hackerU {
+        background: transparent linear-gradient(252deg, #FFFFFF 0%, #F5F7FF 100%) 0% 0% no-repeat padding-box;
+    }
+
+    #second #hackerU-pro {
+        background: white;
+    }
+
+    .buisness div .img-container {
+        align-self: center;
+        width: 12rem;
+        height: 12rem;
+        margin: 1rem;
+    }
+
+    .buisness div .img-container img{
+        width: 100%;
+        height: 100%;
+    } 
+
+    #second .main {
+        margin: 0 auto;
+        width: 70%;
+    }
+
+    #second .main h3,
+    #third .main h3 {
+        font-size: 2.5rem;
+    }
+
+    #second .main .advantages {
+        min-width: 45rem;
+        max-width: 60rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #second .main .advantage {
+        width: 22rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #second .main .advantage .img-container {
+        align-self: flex-start;
+        padding: 1rem;
+    }
+
+    #third {
+        padding: 0;
+        margin: 0;
+    }
+
+    #third .main {
+        margin: -5% auto 2rem auto;
+        width: 70%;
+    }
+    #third .video {
+        right: 15%;
+    }
+
+    #third .main .information {
+        display: flex;
+        flex-direction: row;
+        vertical-align: top;
+        line-height: 1.5rem;
+    }
+
+    #third .main .information p {
+        width: 30%;
+        padding: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #third .main h4 {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    #third .main .our-process {
+        display: flex;
+        position: static;
+        justify-content: space-between;
+    }
+
+    #third .main .our-process .bounceInRight {
+        transform: translateX(1000%);
+        width: 14rem;
+        height: 20rem;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    #third .main .our-process .bounceInRight img {
+        align-self: flex-start;
+        position: relative;
+        top: 3rem;
+    }
+
+    #third .main .our-process .bounceInRight .num-circle {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background: white;
+        text-align: center;
+        vertical-align: bottom;
+    }
+
+    #third .main .our-process .bounceInRight #first-num {
+        margin-top: 1rem;
+    }
+
+    #third .main .our-process .bounceInRight .num-circle span {
+        font-size: 2rem;
+        margin-top: 0.5rem;
+        display: block;
+    }
+
+    #third .main .our-process .bounceInRight h5 {
+        text-align: center;
+        padding: 0.51rem 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+        border-bottom: 1px solid white;
+        width: 90%;
+    }
+
+    #third .main .our-process .bounceInRight p {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .right-animate_1 {
+        animation: right-slide 800ms ease-in-out forwards;
+    }
+    .right-animate_2 {
+        animation: right-slide 800ms 300ms ease-in-out forwards;
+    }
+    .right-animate_3 {
+        animation: right-slide 800ms 600ms ease-in-out forwards;
+    }
+    .right-animate_4 {
+        animation: right-slide 800ms 900ms ease-in-out forwards;
+    }
+
+    #third .main .contact-btn {
+        margin: 3rem auto;
+        width: 18rem;
+       background: transparent;
+       height: 4.5rem;
+       padding: 1px;
+       border: 3px solid black;
+    }
+
+    #third .main .contact-btn a {
+        font-size: 1.5rem;
+        display: block;
+        text-align: center;
+        color: white;
+        padding: 1rem 0;
+        background: #213a7f;
+        height: 100%;
+    }
+
+    #third .runner {
+        height: 4rem;
+        background: white;
+        margin: 0.5rem 0;
+    }
+
+    #third .runner ul {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        white-space: nowrap;
+        padding-top: 1.5rem;
+    }
+
+    #third .runner ul li {
+       animation: runner 30s infinite linear;
+    }
+
+    #third .runner ul:hover li {
+        animation-play-state: paused;
+    }
+
+    #footer .main {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #footer .form {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 10rem;
+    }
+
+    #footer .form .input,
+    #footer .form .button {
+        width: 23%;
+        max-width: 14.5rem;
+        height: 4rem;
+    }
+
+    #footer .form .input label {
+        padding: 0;
+        margin: 0;
+    }
+
+    #footer .form .input input {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    #footer .form .checkbox {
+        margin: auto;
+    }
+
+    #footer .social {
+        margin: 0;
+        padding: 2rem 0;
+        text-align: right;
+    }
+
+    #footer .more-information {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #footer .links {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #footer .list {
+        width: 10rem;
+        padding-bottom: 2rem;
+    }
+
+    #footer .links .list h4 {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2rem;
+    }
+
+    #footer .links .list ul {
+        line-height: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    #footer .links ul li {
+        color: white;
+    }
+
+    #footer .links ul li:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    #footer .branches-container {
+        height: 50rem;
+        width: 15rem;
+        margin: 0;
+    }
+
+    .whats-app__desktop {
+        text-align: center;
+        position: fixed;
+        margin: 1rem;
+        padding: 0.5rem;
+        bottom: 0;
+        background: #25d366;
+        border: 2px solid #25d366;
+        border-radius: 30px;
+        box-shadow: 3px 3px 10px rgba(0, 0,0, 0.5);
+        color: white;
+        font-size: 1.3rem;
+        vertical-align: middle;
+    }
+
+    .icons {
+        position: relative;
+        height: 13vh;
+    }
+
+    .icons span {
+        position: absolute;
+        bottom: 0;
+        right: 20%;
+    }
+
+    .whats-app__desktop a {
+        color: white;
+    }
+
+    .whats-app__desktop a svg {
+        vertical-align: middle;
+    }
+}
+
+@keyframes modal-slide {
+    from {
+        transform: translateY(-10vh);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes right-slide
+{
+   0% {
+       transform: translateX(700%);
+   }
+
+   65% {
+       transform: translateX(-10%);
+   }
+   85% {
+       transform: translateX(10%);
+   }
+
+   100% {
+       transform: translateX(0);
+   }
+
+
+}
+
+@keyframes runner {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(-100vw);
+    }
+
+}
+
